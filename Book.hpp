@@ -18,11 +18,11 @@ class Book
         Book();
         Book(string title, string author, int page_count);
         Book(string title, string author, int page_count, bool digital_form);
-        void setTitle(string& t);
+        void setTitle(string t);
         string getTitle();
-        void setAuthor(string& a);
+        void setAuthor(string a);
         string getAuthor();
-        void setPageCount(int& pc);
+        void setPageCount(int pc);
         int getPageCount();
         void setDigital();
         bool isDigital();

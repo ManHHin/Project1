@@ -17,19 +17,19 @@ Book::Book(string title, string author, int page_count, bool digital_form)
     ,page_count(page_count)
     ,digital_form(digital_form)
 {}
-void Book::setTitle(const string& t){
+void Book::setTitle(string& t){
     title = t;
 }
 string Book::getTitle(){
     return title;
 }
-void Book::setAuthor(const string& a){
+void Book::setAuthor(string& a){
     author = a;
 }
 string Book::getAuthor(){
     return author;
 }
-void Book::setPageCount(const int& pc){
+void Book::setPageCount(int& pc){
     if(pc>0)
         page_count = pc;
     

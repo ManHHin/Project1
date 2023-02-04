@@ -32,6 +32,8 @@ void Book::setPageCount(const int& pc){
 int Book::getPageCount(){
     if(page_count>0)
         return page_count;
+    else
+        return 0;
     
 }
 void Book::setDigital(){

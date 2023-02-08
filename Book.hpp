@@ -2,6 +2,9 @@
 Cs235
 Dr.Tiziana Ligorio
 Project 1
+
+This is a project about a class of a Book such that every Book has a title, an author, the page count,
+ and finallya boolean to indicate whether or not that book is available digitally
 */
 
 #ifndef BOOK_H

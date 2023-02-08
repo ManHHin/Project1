@@ -1,40 +1,35 @@
 #include "Book.hpp"
-
-Book::Book()
-    :title()
+Book::Book():
+    title()
     ,author()
     ,page_count()
     ,digital_form()
 {}
-Book::Book(string title, string author, int page_count, bool digital_form = 0)
-    :title(title)
+Book::Book(std::string title, std::string author, int page_count, bool digital_form):
+    title(title)
     ,author(author)
     ,page_count(page_count)
     ,digital_form(digital_form)
 {}
-void Book::setTitle(const string& t){
+void Book::setTitle(const std::string& t){
     title = t;
 }
-string Book::getTitle() const{
+std::string Book::getTitle() const{
     return title;
 }
-void Book::setAuthor(const string& a){
+void Book::setAuthor(const std::string& a){
     author = a;
 }
-string Book::getAuthor() const{
+std::string Book::getAuthor() const{
     return author;
 }
 void Book::setPageCount(const int& pc){
     if(pc>0)
         page_count = pc;
-    
 }
 int Book::getPageCount() const{
-    if(page_count>0)
-        return page_count;
-    else
-        return 0;
     
+    return page_count;
 }
 void Book::setDigital(){
     digital_form = 1;
@@ -42,3 +37,4 @@ void Book::setDigital(){
 bool Book::isDigital() const{
     return digital_form;
 }
+

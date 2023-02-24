@@ -39,7 +39,7 @@ Manual::Manual(std::string title, std::string author, int page_count, std::strin
 
 {
   website = 1;
-  const std::regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
+  std::regex pattern("((http|https)://)(www.)[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
   if(!std::regex_match(u,pattern)){
       url = "";
       website = 0;

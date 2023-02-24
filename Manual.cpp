@@ -10,9 +10,10 @@ Book-subclasses: Manual.
   Default-initializes all private members.
 */
 Manual::Manual():
-    url(""),
-    device_name(""),
+    url(" "),
+    device_name(" "),
     visual_aid(0),
+    website(0)
 {}
 /**
   Parameterized constructor.
@@ -37,13 +38,18 @@ Manual::Manual(std::string title, std::string author, int page_count,std::string
   visual_aid(v_aid)
 
 {
-  const std::regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
-  if(!std::regex_match(url,pattern)){
-    url = "";
-    website = 0;
+  if(!url.empty()){
+    const std::regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
+    if(!std::regex_match(url,pattern)){
+      url = " ";
+      website = 0;
+    }
+    else{
+      website = 1;
+    }
   }
-  else{
-    website = 1;
+  else {
+    website = 0;
   }
 }
 /**
@@ -70,7 +76,7 @@ std::string Manual::getDevice() const{
   and either way set the has website flag to True
 **/
 bool Manual::setWebsite(const std::string& u){
-  const std::regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}");
+  const std::regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
   if(u.empty()){
     website = 0;
   }
@@ -110,6 +116,3 @@ bool Manual::hasVisualAid() const{
 bool Manual::hasWebsite() const{
   return website;
 }
-
-
- 

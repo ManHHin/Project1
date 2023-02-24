@@ -31,27 +31,21 @@ Manual::Manual():
   If the URL is ill-formatted, the website is set to
   empty string and the website flag is set to False.
 */
-Manual::Manual(std::string title, std::string author, int page_count,std::string d_name, bool digital_form, std::string u, bool v_aid):
-  Book(title, author, page_count, digital_form),
+Manual::Manual(std::string title, std::string author, int page_count, std::string d_name, bool digital_form, std::string u, bool v_aid):
+  Book(title,author,page_count,digital_form),
   device_name(d_name),
   url(u),
   visual_aid(v_aid)
 
 {
-  if(!url.empty()){
-    const std::regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
-    if(!std::regex_match(url,pattern)){
-      url = " ";
+  website = 1;
+  const std::regex pattern("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
+  if(!std::regex_match(u,pattern)){
+      url = "";
       website = 0;
-    }
-    else{
-      website = 1;
-    }
-  }
-  else {
-    website = 0;
   }
 }
+
 /**
   @param: a reference to a string representing the device
   @post: sets the private member variable to the value of the parameter

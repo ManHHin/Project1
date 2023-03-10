@@ -24,9 +24,9 @@ class Book
     //Default-initializes all private members. Booleans are default-initialized to False.
         Book();
         Book(std::string title, std::string author, int page_count, bool digital_form);
-        bool C:\msys64\clang64\binoperator ==(const Book& obj1, const Book& obj2);
-        bool operator !=(const Book& obj1, const Book& obj2);
-        void display(const Book& obj);
+        bool operator ==(const Book& obj) const;
+        bool operator !=(const Book& obj) const;
+        void display(const Book& obj) const;
         
     
     //@param  : the title of the Book

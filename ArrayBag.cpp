@@ -75,7 +75,7 @@ std::vector<T> ArrayBag<T>::toVector() const{
 }
 
 template <class T>
-void ArrayBag<T>::operator +=(const T& obj){
+void ArrayBag<T>::operator +=(const T& obj) const{
     bool has_room = (obj.getCurrentSize() < DEFAULT_CAPACITY);
     if(has_room){
         for(int i=0; i < obj.getCurrentSize(); i++){
@@ -86,7 +86,7 @@ void ArrayBag<T>::operator +=(const T& obj){
 }
 
 template <class T>
-void ArrayBag<T>::operator /=(const T& obj){
+void ArrayBag<T>::operator /=(const T& obj) const{
     bool has_room = (obj.getCurrentSize() < DEFAULT_CAPACITY);
     if(has_room){
         for(int i=0; i < obj.getCurrentSize(); i++){
@@ -132,3 +132,4 @@ bool ArrayBag<T>::contains(const T& anEntry) const{
 
     return getIndexOf(anEntry) > -1;
 }
+

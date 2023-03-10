@@ -8,7 +8,7 @@ Project 3
 #include <vector>
 template<class T>
 
-class ArrayBag 
+class ArrayBag
 {
     public:
     ArrayBag();
@@ -20,8 +20,8 @@ class ArrayBag
     bool contains(const T& anEntry) const;
     int getFrequencyOf(const T& anEntry) const;
     std::vector<T> toVector() const;
-    void operator +=(const T& obj1){}
-    void operator /=(const T& obj1){}
+    void operator +=(const T& obj) const;
+    void operator /=(const T& obj) const;
 
     private:
     static const int DEFAULT_CAPACITY = 200;
@@ -30,5 +30,5 @@ class ArrayBag
     int getIndexOf(const T& target) const;
 
 };
-#include "ArrayBag.cpp"
+//#include "ArrayBag.cpp"
 #endif
